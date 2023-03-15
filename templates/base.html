@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+  </head>
+  <body>
+    <h1>Welcome to PokeMatchup!</h1>
+    <h2>Enter two Pokemon to see which one is more likely to win!</h2>
+    {% block content %}{% endblock %}
+  </body>
+</html>

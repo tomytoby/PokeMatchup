@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    <div class="header">
+      <h1>Welcome to PokeMatchup!</h1>
+    </div>
+    <div class="content">
+      {% if error_message %}
+        <p class="error-message">{{ error_message }}</p>
+      {% else %}
+      <h2>Matchup results between {{ pokemon1 }} and {{ pokemon2 }}:</h2>
+      <p class="matchup-result">{{ matchup_result }}</p>
+      <div class="images">
+        <img src="{{ pokemon1_sprite }}" alt="{{ pokemon1 }}" class="pokemon-image">
+        <img src="{{ pokemon2_sprite }}" alt="{{ pokemon2 }}" class="pokemon-image">
+      </div>
+      <p class="fun-fact">{{ fun_fact }}</p>
+      <form action="/" method="get">
+        <button type="submit" class="btn btn-primary btn-lg center-block">Try another matchup</button>
+      </form>
+      {% endif %}
+    </div>
+  </body>
+</html>
